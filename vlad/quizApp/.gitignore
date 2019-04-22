@@ -42,3 +42,4 @@ bin/
 node_modules/
 .idea/workspace.xml
 package-lock.json
+../.idea

@@ -13,6 +13,10 @@ let UserSchema = new Schema({
         unique: true,
         required: true
     },
+    quizPoints: {
+      type: Number,
+      default: null,
+    },
     password: {
         type: String,
         required: true

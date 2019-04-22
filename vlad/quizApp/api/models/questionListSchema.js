@@ -11,6 +11,16 @@ let QuestionListSchema = new Schema({
         type: Array,
         default: [1,2,3,4],
         required: true
+    },
+    totalPoints: {
+        type: Number,
+        required: true,
+        default: 100,
+    },
+    time: {
+        type: Number,
+        required: true,
+        default: 30,
     }
 });
 

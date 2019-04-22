@@ -11,7 +11,7 @@ const app = express();
 
 const usersRouter = require('./api/routes/userRouter');
 const authRouter = require('./api/routes/authRouter');
-// const quizRouter = require('./api/routes/quizRouter');
+const quizRouter = require('./api/routes/quizRouter');
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ console.log('Connected to Mongodb');
 //-- assign routes To app --//
 authRouter(app);
 usersRouter(app);
-// quizRouter(app);
+quizRouter(app);
 
 //error hanelers
 app.use(function (req, res, next) {
@@ -44,5 +44,7 @@ app.use(async (req, res, next) => {
     res.status( err.statusCode || err.status || 500).send({error: err.message || err});
   }
 });
+
+app.listen(8080, () => console.log("App listening on port 8080!"));
 
 module.exports = app;
